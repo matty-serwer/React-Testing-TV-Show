@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 export const fetchShow = () => {
@@ -11,6 +10,10 @@ export const fetchShow = () => {
         return res;
     //   setShow(res.data);
     //   setSeasons(formatSeasons(res.data._embedded.episodes));
+    })
+    .catch(err => {
+        console.error('error fetching data from api: ', err.message)
+        return err;
     })
     )
 };
